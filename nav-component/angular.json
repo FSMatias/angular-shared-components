@@ -1,0 +1,171 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "nav-component": {
+      "root": "projects/nav-component",
+      "sourceRoot": "projects/nav-component/src",
+      "projectType": "library",
+      "prefix": "nav",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/nav-component/tsconfig.lib.json",
+            "project": "projects/nav-component/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nav-component/src/test.ts",
+            "tsConfig": "projects/nav-component/tsconfig.spec.json",
+            "karmaConfig": "projects/nav-component/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/nav-component/tsconfig.lib.json",
+              "projects/nav-component/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "nav-component-demo": {
+      "root": "projects/nav-component-demo/",
+      "sourceRoot": "projects/nav-component-demo/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/nav-component-demo",
+            "index": "projects/nav-component-demo/src/index.html",
+            "main": "projects/nav-component-demo/src/main.ts",
+            "polyfills": "projects/nav-component-demo/src/polyfills.ts",
+            "tsConfig": "projects/nav-component-demo/tsconfig.app.json",
+            "assets": [
+              "projects/nav-component-demo/src/favicon.ico",
+              "projects/nav-component-demo/src/assets"
+            ],
+            "styles": [
+              "projects/nav-component-demo/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/nav-component-demo/src/environments/environment.ts",
+                  "with": "projects/nav-component-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "nav-component-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "nav-component-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "nav-component-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nav-component-demo/src/test.ts",
+            "polyfills": "projects/nav-component-demo/src/polyfills.ts",
+            "tsConfig": "projects/nav-component-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/nav-component-demo/karma.conf.js",
+            "styles": [
+              "projects/nav-component-demo/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/nav-component-demo/src/favicon.ico",
+              "projects/nav-component-demo/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/nav-component-demo/tsconfig.app.json",
+              "projects/nav-component-demo/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "nav-component-demo-e2e": {
+      "root": "projects/nav-component-demo-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/nav-component-demo-e2e/protractor.conf.js",
+            "devServerTarget": "nav-component-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "nav-component-demo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/nav-component-demo-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "nav-component"
+}
