@@ -58,7 +58,7 @@
               "projects/nav-component-demo/src/assets"
             ],
             "styles": [
-              "projects/nav-component-demo/src/styles.css"
+              "projects/nav-component-demo/src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -115,7 +115,7 @@
             "tsConfig": "projects/nav-component-demo/tsconfig.spec.json",
             "karmaConfig": "projects/nav-component-demo/karma.conf.js",
             "styles": [
-              "projects/nav-component-demo/src/styles.css"
+              "projects/nav-component-demo/src/styles.scss"
             ],
             "scripts": [],
             "assets": [

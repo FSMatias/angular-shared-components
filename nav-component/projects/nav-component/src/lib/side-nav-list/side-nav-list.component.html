@@ -1,0 +1,10 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<mat-nav-list>
+  <div *ngFor="let item of navListItems">
+    <a mat-list-item routerLink={{item.routerLink}} (click)="onSidenavClose()">
+      <mat-icon>{{item.icon}}</mat-icon>
+      <span class="nav-caption">{{item.name}}</span>
+    </a>
+  </div>
+</mat-nav-list>

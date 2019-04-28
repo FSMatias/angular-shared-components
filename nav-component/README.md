@@ -1,36 +1,51 @@
-# NavComponent
+# Nav Component
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
-On this project you can find the nav-component library and the nav-component-demo app which show how the nav-component can be used.
+It contains a sharable navigation component using routing and a test project using the component.
 
-To run the nav-component-demo project:
+This component uses angular material components and can be restyled if you use a differen material style theme.
+
+## nav-component
+
+The nav-component has a responsive behavior. 
+
+Screens higher than 649px, the navigation will display all the headers:
+
+//TODO: Add image
+
+Screens smalled than 650px, the navigation will display a hamburger icon where the user can click on it and see the navigation options on a side navigation component.
+
+//TODO: image
+
+## nav-component-demo
+
+This project shows how to use the nav-component which expects 2 inputs and the routers set on the project.
+
+The leftSideNavHeader input is optional. The idea is to support a header to be displayed on the left side of the navigation while the rightSideNavHeaders will contain the list of headers displayed on the right side of the navigation bar.
+
+The side navigation will display all headers, using the leftSideNavHeader, if exist, as the first option.
+
+
+## Build the library
+
+To build our nav-component Angular Library you should run:
+
+```
+ng build nav-component
+```
+
+Note that, since version 6.1, Angular CLI always builds libraries in production mode so we don’t use the --prod flag
+
+## Build the demo application
+
+```
+ng build nav-component-demo --prod
+```
+
+## Serve the test app (cannot serve the library)
 
 ```
 cd projects
 ng serve nav-component-demo
 ```
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
