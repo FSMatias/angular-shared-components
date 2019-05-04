@@ -26,6 +26,10 @@ The leftSideNavHeader input is optional. The idea is to support a header to be d
 
 The side navigation will display all headers, using the leftSideNavHeader, if exist, as the first option.
 
+## Dependencies
+
+1. Angular 
+2. Angular material
 
 ## Build the library
 
