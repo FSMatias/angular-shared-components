@@ -10,13 +10,14 @@ This component uses angular material components and can be restyled if you use a
 
 The nav-component has a responsive behavior. 
 
-Screens higher than 649px, the navigation will display all the headers:
+On screens higher than 649px, the navigation will display all the headers:
 
-//TODO: Add image
+![screen higher than 649px](./read-me-images/nav-header.PNG)
 
-Screens smalled than 650px, the navigation will display a hamburger icon where the user can click on it and see the navigation options on a side navigation component.
+On screens smalled than 650px, the navigation will display a hamburger icon where the user can click on it and see the navigation options on a side navigation component.
 
-//TODO: image
+![iPhoneX screen - Home page](./read-me-images/iPhoneX-home-page.PNG) 
+![iPhoneX screen - side-nav](./read-me-images/iPhoneX-side-nav.PNG)
 
 ## nav-component-demo
 

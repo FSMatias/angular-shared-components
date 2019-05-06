@@ -4,8 +4,14 @@ a {
 }
 
 a:hover,
-a:active {
+a:active,
+.active-link {
   color: lightgray;
+  text-decoration: underline;
+}
+
+.menu-icon {
+  color: rgb(252, 250, 250);
 }
 
 .navigation-items {
